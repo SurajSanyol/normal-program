@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class base{
+    int a;
+    
+    public:
+        
+
+         void setter( int a){
+              this->a=a;
+              
+         }
+
+         void get(){
+          cout<<"a = "<<a<<endl;
+      
+         }
+
+         // friend class
+       friend class child;
+
+       // friend function declaration
+        friend void getByFriendFunction(base &obj);
+};
+
+ // friend function defination
+ void getByFriendFunction(base & obj){
+     cout<<" friend  function by  value = "<<obj.a<<endl;
+ }
+
+
+class child: public base{
+         
+         public:
+            void print(base & obj1){
+                cout<<" friend class value = "<<obj1.a<<endl;
+            }
+};
+
+int main() {
+  // cout << "Hello world!" << endl;
+
+   base obj1;
+   obj1.setter(2);
+   obj1.get();
+ 
+   cout<<endl;
+   child b1;
+   b1.print(obj1);
+
+   cout<<endl;
+   //This is the friend function 
+   getByFriendFunction(obj1);
+
+ 
+}
