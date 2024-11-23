@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+class base{
+    int a;
+    int *p;
+
+    public:
+         base(){
+           p =  new int;
+         }
+
+         void setter( int a, int b){
+              this->a=a;
+              *p=b;
+         }
+
+         void get(){
+          cout<<"a->> "<<&a<<endl;
+          cout<<"P->> "<<p<<endl;
+         }
+
+         // copy constructor and this will do deep copy 
+         base(base &obj1){
+           this->a=obj1.a;
+           p = new int;
+           *(this->p)=*(obj1.p);
+         }
+};
+
+int main() {
+  // cout << "Hello world!" << endl;
+
+   base obj1;
+   obj1.setter(2,4);
+   obj1.get();
+
+ cout<<"copy the object"<<endl;
+   // copy object;
+   base obj2=obj1;
+   obj2.get();
+  return 0;
+}
