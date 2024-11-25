@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+ void fun(){
+    int num =1;
+     num++;
+    static int num1;
+    num1++;
+
+   cout<<" first = "<<num<<endl;
+  cout<<" second = "<<num1<<endl;
+  cout<<endl;
+ }
+
+int main() {
+  cout << "Hello world!" << endl;
+
+  int c ;
+  static int b ;
+
+  cout<<" first = "<<c<<endl;
+  cout<<" second = "<<b<<endl;
+
+
+  cout<<endl;
+  fun();  // 2,1
+
+  fun(); // 2,2
+  fun();
+  return 0;
+}
