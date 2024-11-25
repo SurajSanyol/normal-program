@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class  base{
+        int a = 1;
+        static int b;  // declare  inside of the class
+          public:
+      // static function is use for the access the static member of the class
+
+         void static fun(){
+            cout<<b<<endl;
+        }
+ };
+
+ int base::b=748;  // definition and initialisation outside of the class
+
+
+int main() {
+  cout << "Hello world!" << endl;
+     
+  // cout<<base::b<<endl;  // if the static  member is public the we can access without any object , but for private static member we need static member function
+
+  base A1 , B1;
+
+  // cout<<A1.b<<endl;
+  //    A1.b = 32;
+  // cout<<B1.b<<endl;
+   
+
+   cout<<endl;
+
+   A1.fun();
+   
+
+  return 0;
+}
